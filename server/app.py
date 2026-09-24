@@ -15,7 +15,7 @@ def get_contract(id):
     """Return contract details if ID exists, else 404."""
     contract = next((item for item in contracts if item["id"] == id), None)
     if contract:
-        return jsonify(contract), 200
+        return contract["contract_information"], 200
     return jsonify({"error": "Contract not found"}), 404
 
 
